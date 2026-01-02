@@ -1,2 +1,2 @@
 # j-a-group
-This repository contains our company website details
+This repository contains website details 
