@@ -159,7 +159,33 @@
             border-radius: 5px;
             font-size: 18px;
         }
+       /* Logo Image Styles */
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
 
+/* For mobile devices */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 40px;
+    }
+}
+
+/* If logo is too wide */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image {
+    max-height: 50px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+}
         .logo-text h1 {
             font-size: 1.3rem;
             color: var(--primary-color);
