@@ -662,6 +662,118 @@
         .animate-fade-in-up {
             animation: fadeInUp 0.6s ease forwards;
         }
+        /* ========================================
+   PROFESSIONAL FLOATING BUTTONS
+   ======================================== */
+
+.floating-buttons {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.float-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.float-btn i {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.float-btn span {
+    position: absolute;
+    right: 56px;
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+.float-btn span::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #1a1a1a;
+}
+
+.float-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.float-btn:hover span {
+    opacity: 1;
+    visibility: visible;
+    right: 60px;
+}
+
+/* WhatsApp */
+.float-btn.whatsapp {
+    background: #25D366;
+}
+
+.float-btn.whatsapp:hover {
+    background: #20b859;
+}
+
+/* TikTok */
+.float-btn.tiktok {
+    background: #010101;
+}
+
+.float-btn.tiktok:hover {
+    background: #1a1a1a;
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .floating-buttons {
+        right: 16px;
+        bottom: 16px;
+        gap: 10px;
+    }
+    
+    .float-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .float-btn i {
+        font-size: 1.2rem;
+    }
+    
+    .float-btn span {
+        display: none;
+    }
+}
     </style>
 </head>
 <body>
@@ -693,6 +805,18 @@
                 </nav>
             </div>
         </div>
+        <!-- Professional Floating Contact Buttons -->
+<div class="floating-buttons">
+    <a href="https://wa.me/233207557204" class="float-btn whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+    
+    <a href="https://tiktok.com/@@j.agroups" class="float-btn tiktok" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-tiktok"></i>
+        <span>TikTok</span>
+    </a>
+</div>
     </header>
      
     <!-- ====== HERO SECTION ====== -->
