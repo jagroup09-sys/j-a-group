@@ -774,7 +774,7 @@
     .float-btn span {
         display: none;
 
-        /* ====== BOOKING SECTION STYLES ====== */
+      /* ====== BOOKING SECTION STYLES ====== */
 .booking-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -985,7 +985,7 @@
                </div>
          </section>
 
-    <!-- ====== WHATSAPP BOOKING FORM ====== -->
+    <!-- ====== WHATSAPP BOOKING FORM WITH MODAL ====== -->
 <section class="booking-section" id="booking">
     <div class="container">
         <div class="section-title">
@@ -1053,12 +1053,40 @@
                 </div>
                 
                 <button type="submit" class="btn btn-secondary">
-                    <i class="fab fa-whatsapp"></i> Send Booking via WhatsApp
+                    <i class="fab fa-whatsapp"></i> Book Appointment
                 </button>
             </form>
         </div>
     </div>
 </section>
+
+<!-- ====== CONFIRMATION MODAL ====== -->
+<div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; max-width:500px; width:90%; padding:40px; border-radius:16px; text-align:center; position:relative; max-height:90vh; overflow-y:auto;">
+        <button onclick="closeConfirmModal()" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999;">&times;</button>
+        
+        <i class="fas fa-check-circle" style="font-size:4rem; color:#25D366; margin-bottom:20px;"></i>
+        <h3 style="margin-bottom:10px;">Confirm Your Booking</h3>
+        <p style="color:#666; margin-bottom:20px;">Review your details before sending to WhatsApp</p>
+        
+        <div style="background:#f8f9fa; padding:15px; border-radius:10px; text-align:left; margin-bottom:20px;">
+            <p><strong>Service:</strong> <span id="confirmService"></span></p>
+            <p><strong>Date:</strong> <span id="confirmDate"></span></p>
+            <p><strong>Time:</strong> <span id="confirmTime"></span></p>
+            <p><strong>Name:</strong> <span id="confirmName"></span></p>
+            <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="confirmPhone"></span></p>
+            <p><strong>Notes:</strong> <span id="confirmNotes">None</span></p>
+        </div>
+        
+        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+            <button onclick="closeConfirmModal()" style="padding:12px 30px; background:#ccc; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:500;">Cancel</button>
+            <button onclick="sendWhatsAppNow()" style="padding:12px 30px; background:#25D366; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:500;">
+                <i class="fab fa-whatsapp"></i> Send to WhatsApp
+            </button>
+        </div>
+    </div>
+</div>
 
     <!-- ====== ABOUT SECTION ====== -->
     <section class="about section-padding" id="about">
@@ -1355,40 +1383,59 @@
             });
         }
 
-        // ====== WHATSAPP BOOKING FORM ======
+       // ====== WHATSAPP BOOKING FORM ======
+let bookingData = {};
+
 function sendToWhatsApp(e) {
     e.preventDefault();
     
     // Get form values
-    const service = document.getElementById('service').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const notes = document.getElementById('notes').value;
+    bookingData = {
+        service: document.getElementById('service').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        notes: document.getElementById('notes').value || 'None'
+    };
     
-    // Format the message
+    // Update modal with data
+    document.getElementById('confirmService').textContent = bookingData.service;
+    document.getElementById('confirmDate').textContent = bookingData.date;
+    document.getElementById('confirmTime').textContent = bookingData.time;
+    document.getElementById('confirmName').textContent = bookingData.name;
+    document.getElementById('confirmEmail').textContent = bookingData.email;
+    document.getElementById('confirmPhone').textContent = bookingData.phone;
+    document.getElementById('confirmNotes').textContent = bookingData.notes;
+    
+    // Show modal
+    document.getElementById('confirmModal').style.display = 'flex';
+}
+
+function sendWhatsAppNow() {
+    // Build the message
     const message = `📋 *NEW BOOKING REQUEST*%0A%0A` +
-                    `📌 *Service:* ${service}%0A` +
-                    `📆 *Date:* ${date}%0A` +
-                    `⏰ *Time:* ${time}%0A` +
-                    `👤 *Name:* ${name}%0A` +
-                    `📧 *Email:* ${email}%0A` +
-                    `📱 *Phone:* ${phone}%0A` +
-                    `📝 *Notes:* ${notes || 'N/A'}`;
+                    `📌 *Service:* ${bookingData.service}%0A` +
+                    `📆 *Date:* ${bookingData.date}%0A` +
+                    `⏰ *Time:* ${bookingData.time}%0A` +
+                    `👤 *Name:* ${bookingData.name}%0A` +
+                    `📧 *Email:* ${bookingData.email}%0A` +
+                    `📱 *Phone:* ${bookingData.phone}%0A` +
+                    `📝 *Notes:* ${bookingData.notes}`;
     
-    // Open WhatsApp with the message
-    const whatsappUrl = `https://wa.me/233207557204?text=${message}`;
+    // REPLACE 233XXXXXXXXX WITH YOUR WHATSAPP NUMBER
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=233207557204&text=${message}`;
     window.open(whatsappUrl, '_blank');
     
-    // Show success message
-    alert('✅ Opening WhatsApp... Please send the message to confirm your booking.');
-    
-    // Reset form
+    // Close modal and reset form
+    closeConfirmModal();
     document.getElementById('bookingForm').reset();
 }
 
+function closeConfirmModal() {
+    document.getElementById('confirmModal').style.display = 'none';
+}
         // ====== SCROLL ANIMATIONS ======
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.animate-fade-in-up');
