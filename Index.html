@@ -828,80 +828,24 @@
     .whatsapp-enquiry-btn {
         width: 100%;
 
-        /* ====== SERVICE ACTIONS ====== */
+       /* ====== SERVICE ACTIONS ====== */
 .service-actions {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-top: 18px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
 }
 
-/* ====== BOOK NOW BUTTON (Primary WhatsApp) ====== */
-.whatsapp-book-btn {
+/* Book Now Button */
+.book-now-btn {
     flex: 1;
     min-width: 120px;
     text-align: center;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
     color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    position: relative;
-    overflow: hidden;
-    letter-spacing: 0.5px;
-}
-
-.whatsapp-book-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.6s ease;
-}
-
-.whatsapp-book-btn:hover::before {
-    left: 100%;
-}
-
-.whatsapp-book-btn:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
-    color: white;
-}
-
-.whatsapp-book-btn:active {
-    transform: scale(0.95);
-}
-
-.whatsapp-book-btn i {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-book-btn:hover i {
-    transform: scale(1.2) rotate(-5deg);
-}
-
-/* ====== ENQUIRE BUTTON (Secondary WhatsApp) ====== */
-.whatsapp-enquiry-btn {
-    flex: 1;
-    min-width: 110px;
-    text-align: center;
-    padding: 12px 20px;
-    background: transparent;
-    color: #25D366;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -910,39 +854,115 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    border: 2px solid #25D366;
+    gap: 10px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.35);
+    position: relative;
+    overflow: hidden;
 }
 
-.whatsapp-enquiry-btn:hover {
-    background: #25D366;
+.book-now-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.6s ease;
+}
+
+.book-now-btn:hover::before {
+    left: 100%;
+}
+
+.book-now-btn:hover {
+    background: linear-gradient(135deg, #ff6b00 0%, #e05a00 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
 }
 
-.whatsapp-enquiry-btn:active {
+.book-now-btn:active {
     transform: scale(0.95);
 }
 
-.whatsapp-enquiry-btn i {
+.book-now-btn i {
     font-size: 1.1rem;
     transition: transform 0.3s ease;
 }
 
-.whatsapp-enquiry-btn:hover i {
-    transform: rotate(-5deg);
+.book-now-btn:hover i {
+    transform: scale(1.2) rotate(-5deg);
 }
 
-/* ====== RESPONSIVE ====== */
+/* Enquiry Button */
+.enquiry-btn {
+    flex: 1;
+    min-width: 110px;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.enquiry-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.6s ease;
+}
+
+.enquiry-btn:hover::before {
+    left: 100%;
+}
+
+.enquiry-btn:hover {
+    background: linear-gradient(135deg, #1a9b8a 0%, #0f6b5f 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    color: white;
+}
+
+.enquiry-btn:active {
+    transform: scale(0.95);
+}
+
+.enquiry-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.enquiry-btn:hover i {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .service-actions {
         flex-direction: column;
         gap: 10px;
     }
     
-    .whatsapp-book-btn,
-    .whatsapp-enquiry-btn {
+    .book-now-btn,
+    .enquiry-btn {
         width: 100%;
         padding: 14px 20px;
         font-size: 1rem;
@@ -951,18 +971,17 @@
 }
 
 @media (max-width: 480px) {
-    .whatsapp-book-btn,
-    .whatsapp-enquiry-btn {
-        padding: 12px 15px;
+    .book-now-btn,
+    .enquiry-btn {
+        padding: 12px 16px;
         font-size: 0.85rem;
     }
     
-    .whatsapp-book-btn i,
-    .whatsapp-enquiry-btn i {
+    .book-now-btn i,
+    .enquiry-btn i {
         font-size: 1rem;
     }
 }
-
      
     }
 }
@@ -1025,7 +1044,7 @@
         </div>
     </section>
 
-  <!-- ====== SERVICES SECTION WITH WHATSAPP BOOKING ====== -->
+ <!-- ====== SERVICES SECTION WITH WHATSAPP BOOKING ====== -->
 <section class="services section-padding" id="services">
     <div class="container">
         <div class="section-title">
@@ -1041,17 +1060,21 @@
                     <h3>CRM for Freelance Photographers</h3>
                     <p>Manage client galleries, booking schedules, contracts, and invoicing.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204X?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                       <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
             
             <!-- Service 2: CRM for Real Estate -->
             <div class="service-card">
@@ -1060,17 +1083,21 @@
                     <h3>CRM for Real Estate Agents</h3>
                     <p>Track properties, manage buyer/seller relationships, automate follow-ups.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Real%20Estate%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Real%20Estate%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                       <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
             
             <!-- Service 3: CRM for Marketing Agencies -->
             <div class="service-card">
@@ -1079,17 +1106,21 @@
                     <h3>CRM for Marketing Agencies</h3>
                     <p>Manage campaigns, track ROI, automate reporting, streamline operations.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Marketing%20Agencies%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Marketing%20Agencies%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                        <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
             
             <!-- Service 4: Ads Management -->
             <div class="service-card">
@@ -1098,17 +1129,21 @@
                     <h3>Ads Management Services</h3>
                     <p>Maximize ROI with strategic advertising across Google, Facebook, Instagram.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Ads%20Management%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Ads%20Management%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                       <div class="service-actions">
+    <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
             
             <!-- Service 5: IT Consultation -->
             <div class="service-card">
@@ -1117,17 +1152,21 @@
                     <h3>IT Consultation Services</h3>
                     <p>Expert technology advice, software solutions, and digital transformation.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20IT%20Consultation%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20IT%20Consultation%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                      <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
             
             <!-- Service 6: Delivery Services -->
             <div class="service-card">
@@ -1136,17 +1175,21 @@
                     <h3>Delivery Services</h3>
                     <p>Fast, reliable, efficient delivery solutions with real-time tracking.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Delivery%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Delivery%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                       <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
             
             <!-- Service 7: Social Media Management -->
             <div class="service-card">
@@ -1155,17 +1198,21 @@
                     <h3>Social Media Management</h3>
                     <p>Build your brand presence with professional content creation and engagement.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Social%20Media%20Management%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Social%20Media%20Management%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                       <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
 
             <!-- Service 8: Logistic Services -->
             <div class="service-card">
@@ -1174,17 +1221,21 @@
                     <h3>Logistics Services</h3>
                     <p>Best supply chain opertions, expertise in local logistics.</p>
                     <div class="service-action">
-                         <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Google%20Business%20Profile%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Google%20Business%20Profile%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
+                         <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+         </a>
+        </div>
+      </div>
+     </div>
+
 
             
             <!-- Service 9: Google Business Profile -->
@@ -1194,19 +1245,22 @@
                     <h3>Google Business Profile Management</h3>
                     <p>Optimize your Google Business Profile to attract more customers.</p>
                     <div class="service-actions">
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Google%20Business%20Profile%20service" 
-                           class="whatsapp-book-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Book Now
-                        </a>
-                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Google%20Business%20Profile%20service.%20Can%20you%20tell%20me%20more%3F" 
-                           class="whatsapp-enquiry-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                       <!-- Book Now Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+       class="book-now-btn" target="_blank">
+        <i class="fas fa-calendar-plus"></i> Book Now
+    </a>
+    
+    <!-- Enquiry Button -->
+    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+       class="enquiry-btn" target="_blank">
+        <i class="fas fa-comment-dots"></i> Enquire
+        </a>
+      </div>
     </div>
+   </div>
+ </div>
+</div>
 </section>
   
     <!-- ====== ABOUT SECTION ====== -->
