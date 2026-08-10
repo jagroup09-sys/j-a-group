@@ -774,6 +774,62 @@
     .float-btn span {
         display: none;
 
+        /* ====== WHATSAPP ENQUIRY BUTTONS ====== */
+.service-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.service-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+
+.whatsapp-enquiry-btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 10px 15px;
+    background: #25D366;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.whatsapp-enquiry-btn:hover {
+    background: #20b859;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    color: white;
+}
+
+.whatsapp-enquiry-btn i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .service-actions {
+        flex-direction: column;
+    }
+    
+    .service-actions .btn,
+    .whatsapp-enquiry-btn {
+        width: 100%;
+    }
+}
+
      
     }
 }
@@ -836,86 +892,145 @@
         </div>
     </section>
 
-    <!-- ====== SERVICES SECTION ====== -->
-    <section class="services section-padding" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a wide range of professional services to help your business grow and succeed in today's competitive market.</p>
+   <!-- ====== SERVICES SECTION WITH WHATSAPP ENQUIRY ====== -->
+<section class="services section-padding" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Choose a service and enquire directly on WhatsApp</p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Service 1: CRM for Photographers -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363576/emmanuel-acua-f3P6xfrj2P8-unsplash_rlmm0d.jpg');"></div>
+                <div class="service-content">
+                    <h3>CRM for Freelance Photographers</h3>
+                    <p>Manage client galleries, booking schedules, contracts, and invoicing.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
+                    </div>
+                </div>
             </div>
             
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Ads Management Services</h3>
-                        <p>Maximize your ROI with strategic advertising campaigns across Google, Facebook, Instagram, and other platforms.</p>
-                        <a href="#contact" class="btn">Learn More</a>
+            <!-- Service 2: CRM for Real Estate -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363607/webaliser-_TPTXZd9mOo-unsplash_ifa5hx.jpg');"></div>
+                <div class="service-content">
+                    <h3>CRM for Real Estate Agents</h3>
+                    <p>Track properties, manage buyer/seller relationships, automate follow-ups.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Real%20Estate%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
                     </div>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3>IT Consultation Services</h3>
-                        <p>Expert technology advice, software solutions, and digital transformation strategies for your business.</p>
-                        <a href="#contact" class="btn">Learn More</a>
+            </div>
+            
+            <!-- Service 3: CRM for Marketing Agencies -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778943024/CRM1_g90pjq.jpg');"></div>
+                <div class="service-content">
+                    <h3>CRM for Marketing Agencies</h3>
+                    <p>Manage campaigns, track ROI, automate reporting, streamline operations.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233XXXXXXXXX?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Marketing%20Agencies%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
                     </div>
                 </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/q_auto/f_auto/v1778671025/Delivery1_jqneia.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Delivery Services</h3>
-                        <p>Fast, reliable, and efficient delivery solutions with real-time tracking for packages of all sizes.</p>
-                        <a href="#contact" class="btn">Learn More</a>
+            </div>
+            
+            <!-- Service 4: Ads Management -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1784049616/Advertising_pzeqsw.png');"></div>
+                <div class="service-content">
+                    <h3>Ads Management Services</h3>
+                    <p>Maximize ROI with strategic advertising across Google, Facebook, Instagram.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Ads%20Management%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
                     </div>
                 </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/q_auto/f_auto/v1778672495/Logistics1_ixfn1e.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Logistics Services</h3>
-                        <p>End-to-end logistics solutions including warehousing, inventory management, and supply chain optimization.</p>
-                        <a href="#contact" class="btn">Learn More</a>
+            </div>
+            
+            <!-- Service 5: IT Consultation -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363628/carlos-muza-hpjSkU2UYSU-unsplash_ez8fix.jpg');"></div>
+                <div class="service-content">
+                    <h3>IT Consultation Services</h3>
+                    <p>Expert technology advice, software solutions, and digital transformation.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20IT%20Consultation%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
                     </div>
                 </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Social Media Management</h3>
-                        <p>Build your brand presence with professional social media management, content creation, and engagement strategies.</p>
-                        <a href="#contact" class="btn">Learn More</a>
+            </div>
+            
+            <!-- Service 6: Delivery Services -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778671025/Delivery1_jqneia.jpg');"></div>
+                <div class="service-content">
+                    <h3>Delivery Services</h3>
+                    <p>Fast, reliable, efficient delivery solutions with real-time tracking.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Delivery%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
                     </div>
                 </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/q_auto/f_auto/v1778671483/Business3_jx1ffc.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Google Business Profile</h3>
-                        <p>Optimize your Google Business Profile to increase visibility, attract more customers, and manage online reviews.</p>
-                        <a href="#contact" class="btn">Learn More</a>
+            </div>
+            
+            <!-- Service 7: Social Media Management -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363685/adem-ay-Tk9m_HP4rgQ-unsplash_gcbadz.jpg');"></div>
+                <div class="service-content">
+                    <h3>Social Media Management</h3>
+                    <p>Build your brand presence with professional content creation and engagement.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Social%20Media%20Management%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
                     </div>
                 </div>
-                <!-- Service 7 -->
-                <div class="service-card animate-fade-in-up">
-                    <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/q_auto/f_auto/v1778943024/CRM1_g90pjq.jpg');"></div>
-                        <div class="service-content">
-                             <h3>CRM System Setup</h3>
-                             <p>Optimize your customer relationship management, pipilines setup, and visual data for proper reports, attracts great leads, hence customers needs are attend to without much of complications</p>
-                             <a href="#contact" class="btn">Learn More</a>
-                        </div>
-                     </div>
-               </div>
-         </section>
-
+            </div>
+            
+            <!-- Service 8: Google Business Profile -->
+            <div class="service-card">
+                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778671499/Business2_bqump2.jpg');"></div>
+                <div class="service-content">
+                    <h3>Google Business Profile Management</h3>
+                    <p>Optimize your Google Business Profile to attract more customers.</p>
+                    <div class="service-actions">
+                        <a href="#booking" class="btn">Book Now</a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Google%20Business%20Profile%20service" 
+                           class="whatsapp-enquiry-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
   
     <!-- ====== ABOUT SECTION ====== -->
     <section class="about section-padding" id="about">
