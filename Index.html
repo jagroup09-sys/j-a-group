@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J&A Logistics Company and Technologies</title>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778600778/JAlogo_egejmo.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* ====== CSS RESET & BASE STYLES ====== */
+        /* ========================================
+           RESET & BASE
+        ======================================== */
         * {
             margin: 0;
             padding: 0;
@@ -18,34 +23,29 @@
         }
 
         :root {
-            --primary-color: #0066cc;
-            --primary-dark: #0055aa;
-            --secondary-color: #ff6b00;
-            --text-color: #333;
-            --light-gray: #f8f9fa;
-            --medium-gray: #e9ecef;
-            --dark-gray: #6c757d;
+            --primary: #0066cc;
+            --primary-dark: #0052a3;
+            --secondary: #ff6b00;
+            --secondary-dark: #e05a00;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #128C7E;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
             --white: #ffffff;
-            --shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --text: #333333;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
         }
 
         .container {
@@ -66,72 +66,73 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--primary);
             margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
+            font-weight: 700;
         }
 
         .section-title h2::after {
             content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
             width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
+            height: 4px;
+            background: var(--secondary);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         .section-title p {
-            color: var(--dark-gray);
+            color: #666;
             font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 600px;
+            margin: 10px auto 0;
         }
 
+        /* Buttons */
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
             padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 500;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
-            transition: var(--transition);
-            font-size: 1rem;
         }
 
         .btn:hover {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
         }
 
         .btn-secondary {
-            background-color: var(--secondary-color);
+            background: var(--secondary);
         }
 
         .btn-secondary:hover {
-            background-color: #e05a00;
+            background: var(--secondary-dark);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.3);
         }
 
-        /* ====== HEADER & NAVIGATION ====== */
+        /* ========================================
+           HEADER
+        ======================================== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--white);
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             transition: var(--transition);
         }
 
         header.scrolled {
-            box-shadow: var(--shadow);
-            padding: 5px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
@@ -139,7 +140,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            transition: var(--transition);
         }
 
         .logo {
@@ -149,80 +149,46 @@
         }
 
         .logo-icon {
-            width: 0px;
-            height: 0px;
-            background-color: var(--primary-color);
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
             color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            border-radius: 5px;
             font-size: 18px;
+            border-radius: 8px;
         }
-       /* Logo Image Styles */
-.logo-image {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-}
 
-/* For mobile devices */
-@media (max-width: 768px) {
-    .logo-image {
-        height: 40px;
-    }
-}
-
-/* If logo is too wide */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo-image {
-    max-height: 60px;
-    max-width: 150px;
-    width: auto;
-    height: auto;
-}
         .logo-text h1 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         .logo-text span {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            font-weight: 400;
+            font-size: 0.75rem;
+            color: #666;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
+            text-decoration: none;
+            color: var(--text);
             font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
             transition: var(--transition);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         .mobile-menu-btn {
@@ -230,37 +196,35 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--primary-color);
+            color: var(--primary);
             cursor: pointer;
         }
 
-        /* ====== HERO SECTION ====== */
+        /* ========================================
+           HERO
+        ======================================== */
         .hero {
-            padding-top: 150px;
+            padding-top: 140px;
             padding-bottom: 100px;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(0, 86, 179, 0.9) 100%), 
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(0, 82, 163, 0.9) 100%),
                         url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
-            color: var(--white);
             text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            color: var(--white);
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
         }
 
         .hero-buttons {
@@ -271,61 +235,55 @@
         }
 
         .hero .btn {
-            background-color: var(--white);
-            color: var(--primary-color);
+            background: var(--white);
+            color: var(--primary);
         }
 
         .hero .btn:hover {
-            background-color: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .hero .btn-secondary {
-            background-color: var(--secondary-color);
+            background: var(--secondary);
             color: var(--white);
         }
 
-        /* ====== SERVICES SECTION ====== */
+        .hero .btn-secondary:hover {
+            background: var(--secondary-dark);
+        }
+
+        /* ========================================
+           SERVICES
+        ======================================== */
         .services {
-            background-color: var(--light-gray);
-            padding: 100px 0;
+            background: var(--light);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
 
         .service-card {
-            background-color: var(--white);
-            border-radius: 10px;
+            background: var(--white);
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            height: 100%;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .service-icon {
             height: 200px;
             background-size: cover;
             background-position: center;
-            position: relative;
-        }
-
-        .service-icon::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 102, 204, 0.1), rgba(0, 102, 204, 0.4));
         }
 
         .service-content {
@@ -333,37 +291,163 @@
         }
 
         .service-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
+            color: var(--primary);
             margin-bottom: 10px;
-            color: var(--primary-color);
         }
 
         .service-content p {
-            color: var(--dark-gray);
+            color: #666;
+            font-size: 0.95rem;
             margin-bottom: 15px;
         }
 
-        /* ====== ABOUT SECTION ====== */
-        .about {
-            padding: 100px 0;
+        /* ====== SERVICE ACTIONS ====== */
+        .service-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #f0f0f0;
         }
 
+        /* Book Now Button */
+        .book-now-btn {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-now-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .book-now-btn:hover::before {
+            left: 100%;
+        }
+
+        .book-now-btn:hover {
+            background: linear-gradient(135deg, #ff6b00 0%, #e05a00 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+            color: white;
+        }
+
+        .book-now-btn:active {
+            transform: scale(0.95);
+        }
+
+        .book-now-btn i {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .book-now-btn:hover i {
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        /* Enquiry Button */
+        .enquiry-btn {
+            flex: 1;
+            min-width: 110px;
+            text-align: center;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enquiry-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .enquiry-btn:hover::before {
+            left: 100%;
+        }
+
+        .enquiry-btn:hover {
+            background: linear-gradient(135deg, #1a9b8a 0%, #0f6b5f 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            color: white;
+        }
+
+        .enquiry-btn:active {
+            transform: scale(0.95);
+        }
+
+        .enquiry-btn i {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .enquiry-btn:hover i {
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        /* ========================================
+           ABOUT
+        ======================================== */
         .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
 
         .about-text h2 {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--primary);
             margin-bottom: 20px;
         }
 
         .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
         }
 
         .about-features {
@@ -372,159 +456,160 @@
         }
 
         .about-features li {
-            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
         .about-features i {
-            color: var(--secondary-color);
+            color: var(--secondary);
+            font-size: 1.2rem;
         }
 
         .about-image {
             height: 400px;
-            background: url(https://res.cloudinary.com/ddnvhkf3v/image/upload/q_auto/f_auto/v1778607572/Project1_sfdtvh.jpg) center/cover;
-            border-radius: 10px;
+            background: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778607572/Project1_sfdtvh.jpg') center/cover;
+            border-radius: 12px;
             box-shadow: var(--shadow);
         }
 
-        /* ====== CONTACT SECTION ====== */
+        .about-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .about-actions .btn {
+            padding: 10px 25px;
+        }
+
+        /* ========================================
+           CONTACT
+        ======================================== */
         .contact {
-            background-color: var(--light-gray);
-            padding: 100px 0;
+            background: var(--light);
         }
 
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 50px;
         }
 
         .contact-info h3 {
             font-size: 1.8rem;
-            color: var(--primary-color);
+            color: var(--primary);
             margin-bottom: 20px;
         }
 
-        .contact-details {
-            margin-top: 30px;
+        .contact-info p {
+            color: #666;
+            margin-bottom: 15px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .contact-icon {
+        .contact-item .icon {
             width: 45px;
             height: 45px;
-            background-color: var(--primary-color);
+            background: var(--primary);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
         }
 
-        /* ====== FORM STYLES ====== */
         .contact-form {
-            background-color: var(--white);
+            background: var(--white);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: var(--shadow);
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .contact-form .form-group {
+            margin-bottom: 18px;
         }
 
-        .form-group label {
+        .contact-form label {
             display: block;
-            margin-bottom: 8px;
             font-weight: 500;
-            color: var(--text-color);
+            margin-bottom: 6px;
         }
 
-        .form-control {
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid var(--medium-gray);
-            border-radius: 5px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-size: 1rem;
             transition: var(--transition);
         }
 
-        .form-control:focus {
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--primary);
             outline: none;
-            border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
 
-        textarea.form-control {
-            min-height: 150px;
+        .contact-form textarea {
+            min-height: 120px;
             resize: vertical;
         }
 
-        .form-status {
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-            display: none;
+        .contact-form .btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.1rem;
         }
 
-        .form-status.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .form-status.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-
-        /* ====== FOOTER ====== */
+        /* ========================================
+           FOOTER
+        ======================================== */
         footer {
-            background-color: #222;
+            background: var(--dark);
             color: var(--white);
-            padding: 70px 0 20px;
+            padding: 60px 0 20px;
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             color: var(--white);
         }
 
-        .footer-links {
-            list-style: none;
+        .footer-column p,
+        .footer-column a {
+            color: #aaa;
+            font-size: 0.95rem;
         }
 
-        .footer-links li {
+        .footer-column a {
+            display: block;
+            text-decoration: none;
             margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #bbb;
             transition: var(--transition);
         }
 
-        .footer-links a:hover {
+        .footer-column a:hover {
             color: var(--white);
             padding-left: 5px;
         }
@@ -532,13 +617,13 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .social-links a {
             width: 40px;
             height: 40px;
-            background-color: #333;
+            background: rgba(255, 255, 255, 0.1);
             color: var(--white);
             border-radius: 50%;
             display: flex;
@@ -548,71 +633,134 @@
         }
 
         .social-links a:hover {
-            background-color: var(--primary-color);
+            background: var(--primary);
             transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #bbb;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
             font-size: 0.9rem;
         }
 
-        /* ====== RESPONSIVE STYLES ====== */
+        /* ========================================
+           FLOATING BUTTONS
+        ======================================== */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+            font-size: 1.4rem;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-btn.whatsapp {
+            background: var(--whatsapp);
+        }
+
+        .float-btn.whatsapp:hover {
+            background: var(--whatsapp-dark);
+        }
+
+        .float-btn.tiktok {
+            background: #010101;
+        }
+
+        .float-btn.tiktok:hover {
+            background: #1a1a1a;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
+            .about-content {
+                grid-template-columns: 1fr;
             }
             
-            .section-padding {
-                padding: 70px 0;
+            .contact-container {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                padding: 10px 0;
-            }
-            
             .nav-links {
-                position: fixed;
+                display: none;
+                flex-direction: column;
+                position: absolute;
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
+                background: var(--white);
                 padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-                z-index: 999;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             }
             
             .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                display: flex;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
-            .hero {
-                padding-top: 130px;
-                padding-bottom: 80px;
-            }
-            
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 250px;
+            }
+            
+            .floating-buttons {
+                right: 15px;
+                bottom: 15px;
+            }
+            
+            .float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
             }
             
             .hero-buttons {
@@ -622,429 +770,71 @@
             
             .hero-buttons .btn {
                 width: 100%;
-                max-width: 250px;
+                max-width: 280px;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
+            .service-actions {
+                flex-direction: column;
             }
             
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .service-card, .contact-form {
-                padding: 20px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.1rem;
+            .book-now-btn,
+            .enquiry-btn {
+                width: 100%;
+                min-width: unset;
             }
         }
-
-        /* ====== ANIMATIONS ====== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        /* ========================================
-   PROFESSIONAL FLOATING BUTTONS
-   ======================================== */
-
-.floating-buttons {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.float-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.25s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
-
-.float-btn i {
-    font-size: 1.4rem;
-    color: #ffffff;
-}
-
-.float-btn span {
-    position: absolute;
-    right: 56px;
-    background: #1a1a1a;
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease;
-    letter-spacing: 0.3px;
-}
-
-.float-btn span::after {
-    content: '';
-    position: absolute;
-    right: -6px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 6px solid #1a1a1a;
-}
-
-.float-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.float-btn:hover span {
-    opacity: 1;
-    visibility: visible;
-    right: 60px;
-}
-
-/* WhatsApp */
-.float-btn.whatsapp {
-    background: #25D366;
-}
-
-.float-btn.whatsapp:hover {
-    background: #20b859;
-}
-
-/* TikTok */
-.float-btn.tiktok {
-    background: #010101;
-}
-
-.float-btn.tiktok:hover {
-    background: #1a1a1a;
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-    .floating-buttons {
-        right: 16px;
-        bottom: 16px;
-        gap: 10px;
-    }
-    
-    .float-btn {
-        width: 44px;
-        height: 44px;
-    }
-    
-    .float-btn i {
-        font-size: 1.2rem;
-    }
-    
-    .float-btn span {
-        display: none;
-
-        /* ====== WHATSAPP ENQUIRY BUTTONS ====== */
-.service-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-}
-
-.service-actions .btn {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-    padding: 10px 15px;
-    font-size: 0.9rem;
-}
-
-.whatsapp-enquiry-btn {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-    padding: 10px 15px;
-    background: #25D366;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.whatsapp-enquiry-btn:hover {
-    background: #20b859;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-    color: white;
-}
-
-.whatsapp-enquiry-btn i {
-    font-size: 1.1rem;
-}
-
-@media (max-width: 768px) {
-    .service-actions {
-        flex-direction: column;
-    }
-    
-    .service-actions .btn,
-    .whatsapp-enquiry-btn {
-        width: 100%;
-
-       /* ====== SERVICE ACTIONS ====== */
-.service-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 2px solid #f0f0f0;
-}
-
-/* Book Now Button */
-.book-now-btn {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.35);
-    position: relative;
-    overflow: hidden;
-}
-
-.book-now-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transition: left 0.6s ease;
-}
-
-.book-now-btn:hover::before {
-    left: 100%;
-}
-
-.book-now-btn:hover {
-    background: linear-gradient(135deg, #ff6b00 0%, #e05a00 100%);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
-    color: white;
-}
-
-.book-now-btn:active {
-    transform: scale(0.95);
-}
-
-.book-now-btn i {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
-
-.book-now-btn:hover i {
-    transform: scale(1.2) rotate(-5deg);
-}
-
-/* Enquiry Button */
-.enquiry-btn {
-    flex: 1;
-    min-width: 110px;
-    text-align: center;
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
-    position: relative;
-    overflow: hidden;
-}
-
-.enquiry-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transition: left 0.6s ease;
-}
-
-.enquiry-btn:hover::before {
-    left: 100%;
-}
-
-.enquiry-btn:hover {
-    background: linear-gradient(135deg, #1a9b8a 0%, #0f6b5f 100%);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
-    color: white;
-}
-
-.enquiry-btn:active {
-    transform: scale(0.95);
-}
-
-.enquiry-btn i {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
-
-.enquiry-btn:hover i {
-    transform: scale(1.2) rotate(-5deg);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .service-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .book-now-btn,
-    .enquiry-btn {
-        width: 100%;
-        padding: 14px 20px;
-        font-size: 1rem;
-        min-width: unset;
-    }
-}
-
-@media (max-width: 480px) {
-    .book-now-btn,
-    .enquiry-btn {
-        padding: 12px 16px;
-        font-size: 0.85rem;
-    }
-    
-    .book-now-btn i,
-    .enquiry-btn i {
-        font-size: 1rem;
-    }
-}
-     
-    }
-}
     </style>
 </head>
 <body>
-    <!-- ====== HEADER ====== -->
-    <header id="mainHeader">
-        <div class="container">
-            <div class="header-container">
-                <div class="logo">
-                    <div class="logo-icon">J&A</div>
-                          <img src="https://res.cloudinary.com/ddnvhkf3v/image/upload/q_auto/f_auto/v1778600778/JAlogo_egejmo.jpg" alt="J&A Logistics and Technologies Logo" class="logo-image">
-                    <div class="logo-text">
-                        <h1>J&A GROUP OF COMPANIES</h1>
-                        <span>Accelerating Your Brand Success</span>
-                    </div>
-                </div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav>
-                    <ul class="nav-links" id="navLinks">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="mailto:jagroup09@gmail.com" class="btn btn-secondary">Get Quote</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <!-- Professional Floating Contact Buttons -->
-<div class="floating-buttons">
-    <a href="https://wa.me/233207557204" class="float-btn whatsapp" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp</span>
-    </a>
-    
-    <a href="https://tiktok.com/@jagroup009" class="float-btn tiktok" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-tiktok"></i>
-        <span>TikTok</span>
-    </a>
-</div>
-    </header>
-     
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content animate-fade-in-up">
-                <h1>Streamline Your Business with Expert Solutions</h1>
-                <p>J&A Logistics and Technologies provides comprehensive services including Ads Management, IT Consultation, Delivery Services, Logistics, Social Media Management, and Google Business Profile Optimization.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn">Our Services</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
- <!-- ====== SERVICES SECTION WITH WHATSAPP BOOKING ====== -->
+<!-- ========================================
+HEADER
+======================================== -->
+<header id="header">
+    <div class="container">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">J&A</div>
+                <div class="logo-text">
+                    <h1>LOGISTICS & TECHNOLOGIES</h1>
+                    <span>Complete Business Solutions</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="assets/pdf/company-profile.pdf" download><i class="fas fa-file-pdf"></i> Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- ========================================
+HERO
+======================================== -->
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Streamline Your Business with Expert Solutions</h1>
+        <p>J&A Logistics and Technologies provides comprehensive services including CRM, Ads Management, IT Consultation, Delivery, Logistics, Social Media Management, and Google Business Profile Optimization.</p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn">Our Services</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+SERVICES
+======================================== -->
 <section class="services section-padding" id="services">
     <div class="container">
         <div class="section-title">
@@ -1053,578 +843,411 @@
         </div>
         
         <div class="services-grid">
-            <!-- Service 1: CRM for Photographers -->
+            <!-- Service 1 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363576/emmanuel-acua-f3P6xfrj2P8-unsplash_rlmm0d.jpg');"></div>
                 <div class="service-content">
                     <h3>CRM for Freelance Photographers</h3>
                     <p>Manage client galleries, booking schedules, contracts, and invoicing.</p>
                     <div class="service-actions">
-                       <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
-
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 2: CRM for Real Estate -->
+            <!-- Service 2 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363607/webaliser-_TPTXZd9mOo-unsplash_ifa5hx.jpg');"></div>
                 <div class="service-content">
                     <h3>CRM for Real Estate Agents</h3>
                     <p>Track properties, manage buyer/seller relationships, automate follow-ups.</p>
                     <div class="service-actions">
-                       <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
-
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Real%20Estate%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Real%20Estate%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 3: CRM for Marketing Agencies -->
+            <!-- Service 3 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778943024/CRM1_g90pjq.jpg');"></div>
                 <div class="service-content">
                     <h3>CRM for Marketing Agencies</h3>
                     <p>Manage campaigns, track ROI, automate reporting, streamline operations.</p>
                     <div class="service-actions">
-                        <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
-
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Marketing%20Agencies%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Marketing%20Agencies%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 4: Ads Management -->
+            <!-- Service 4 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1784049616/Advertising_pzeqsw.png');"></div>
                 <div class="service-content">
                     <h3>Ads Management Services</h3>
                     <p>Maximize ROI with strategic advertising across Google, Facebook, Instagram.</p>
                     <div class="service-actions">
-                       <div class="service-actions">
-    <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Ads%20Management%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Ads%20Management%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 5: IT Consultation -->
+            <!-- Service 5 -->
             <div class="service-card">
-                <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778607572/Project1_sfdtvh.jpg');"></div>
+                <div class="service-icon" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
                 <div class="service-content">
                     <h3>IT Consultation Services</h3>
                     <p>Expert technology advice, software solutions, and digital transformation.</p>
                     <div class="service-actions">
-                      <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
-
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20IT%20Consultation%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20IT%20Consultation%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 6: Delivery Services -->
+            <!-- Service 6 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778671025/Delivery1_jqneia.jpg');"></div>
                 <div class="service-content">
                     <h3>Delivery Services</h3>
                     <p>Fast, reliable, efficient delivery solutions with real-time tracking.</p>
                     <div class="service-actions">
-                       <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
-
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Delivery%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Delivery%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 7: Social Media Management -->
+            <!-- Service 7 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1786363685/adem-ay-Tk9m_HP4rgQ-unsplash_gcbadz.jpg');"></div>
                 <div class="service-content">
                     <h3>Social Media Management</h3>
                     <p>Build your brand presence with professional content creation and engagement.</p>
                     <div class="service-actions">
-                       <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Social%20Media%20Management%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Social%20Media%20Management%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-
-            <!-- Service 8: Logistic Services -->
+             <!-- Service 8 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778672495/Logistics1_ixfn1e.jpg');"></div>
                 <div class="service-content">
-                    <h3>Logistics Services</h3>
-                    <p>Best supply chain opertions, expertise in local logistics.</p>
-                    <div class="service-action">
-                         <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-         </a>
-        </div>
-      </div>
-     </div>
-
-
+                    <h3>Logistics Service</h3>
+                    <p>Best supply chain expertise.</p>
+                    <div class="service-actions">
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Google%20Business%20Profile%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Google%20Business%20Profile%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Service 9: Google Business Profile -->
+            <!-- Service 9 -->
             <div class="service-card">
                 <div class="service-icon" style="background-image: url('https://res.cloudinary.com/ddnvhkf3v/image/upload/v1778671499/Business2_bqump2.jpg');"></div>
                 <div class="service-content">
                     <h3>Google Business Profile Management</h3>
                     <p>Optimize your Google Business Profile to attract more customers.</p>
                     <div class="service-actions">
-                       <!-- Book Now Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20CRM%20for%20Photographers%20service" 
-       class="book-now-btn" target="_blank">
-        <i class="fas fa-calendar-plus"></i> Book Now
-    </a>
-    
-    <!-- Enquiry Button -->
-    <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20CRM%20for%20Photographers%20service.%20Can%20you%20tell%20me%20more%3F" 
-       class="enquiry-btn" target="_blank">
-        <i class="fas fa-comment-dots"></i> Enquire
-        </a>
-      </div>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%20want%20to%20book%20your%20Google%20Business%20Profile%20service" 
+                           class="book-now-btn" target="_blank">
+                            <i class="fas fa-calendar-plus"></i> Book Now
+                        </a>
+                        <a href="https://wa.me/233207557204?text=Hi%20J%26A%2C%20I%27m%20interested%20in%20your%20Google%20Business%20Profile%20service.%20Can%20you%20tell%20me%20more%3F" 
+                           class="enquiry-btn" target="_blank">
+                            <i class="fas fa-comment-dots"></i> Enquire
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-   </div>
- </div>
-</div>
 </section>
-  
-    <!-- ====== ABOUT SECTION ====== -->
-    <section class="about section-padding" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text animate-fade-in-up">
-                    <h2>About J&A Logistics Company and Technologies</h2>
-                    <p>We are a forward-thinking company dedicated to providing comprehensive business solutions. With expertise spanning logistics, technology, and digital marketing, we help businesses thrive in today's competitive landscape.</p>
-                    <p>Our team of experienced professionals is committed to delivering exceptional service tailored to your specific needs. We believe in building long-term partnerships with our clients.</p>
-                    
-                    <ul class="about-features">
-                        <li><i class="fas fa-check-circle"></i> Over a year of industry experience</li>
-                        <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
-                        <li><i class="fas fa-check-circle"></i> Customized solutions for each client</li>
-                        <li><i class="fas fa-check-circle"></i> Fast and reliable service delivery</li>
-                        <li><i class="fas fa-check-circle"></i> Reliable CRM system setup</li>
-                    </ul>
-                    
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                
-                <div class="about-image animate-fade-in-up"></div>
-            </div>
+
+<!-- ========================================
+ABOUT
+======================================== -->
+<section class="about section-padding" id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Learn more about who we are and what we do</p>
         </div>
-    </section>
-
-    <!-- ====== CONTACT SECTION ====== -->
-    <section class="contact section-padding" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Ready to take your business to the next level? Get in touch with us today!</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info animate-fade-in-up">
-                    <h3>Get In Touch</h3>
-                    <p>Have questions about our services or ready to get started? Contact us using the information below or fill out the form.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>jagroup09@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+233 207 557 204</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Address</h4>
-                                <p>Sogakope, Volta Region, Ghana</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form animate-fade-in-up">
-                    <!-- Formspree Form - REPLACE YOUR_FORMSPREE_ID with actual ID -->
-                    <form id="contactForm" action="https://formspree.io/f/xjgkwwll" method="POST">
-                        <div id="formStatus" class="form-status"></div>
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service" class="form-control">
-                                <option value="">Select a service</option>
-                                <option value="ads-management">Ads Management</option>
-                                <option value="it-consultation">IT Consultation</option>
-                                <option value="delivery">Delivery Services</option>
-                                <option value="logistics">Logistics Services</option>
-                                <option value="social-media">Social Media Management</option>
-                                <option value="google-business">Google Business Profile</option>
-                                <option value="CRM-System">CRM Syetem Setup</option>
-                                <option value="multiple">Multiple Services</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <input type="hidden" name="_subject" value="New Contact Form Submission - J&A Website">
-                        <input type="hidden" name="_replyto" value="jagroup09@gmail.com">
-                        
-                        <button type="submit" class="btn btn-secondary" id="submitBtn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== FOOTER ====== -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="logo">
-                        <div class="logo-icon"></div>
-                        <div class="logo-text">
-                            <h3>J&A GROUP OF COMPANIES</h3>
-                        </div>
-                    </div>
-                    <p>Providing comprehensive business solutions including logistics, technology, and digital marketing services.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services">Ads Management</a></li>
-                        <li><a href="#services">IT Consultation</a></li>
-                        <li><a href="#services">Delivery Services</a></li>
-                        <li><a href="#services">Logistics</a></li>
-                        <li><a href="#services">Social Media Management</a></li>
-                        <li><a href="#services">Google Business Profile</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> jagroup09@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +233 207 557 204</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Sogakope, Volta Region, Ghana</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 J&A Logistics and Technologies. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ====== JAVASCRIPT ====== -->
-    <script>
-        // ====== DOM ELEMENTS ======
-        const header = document.getElementById('mainHeader');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
-        const submitBtn = document.getElementById('submitBtn');
-
-        // ====== MOBILE MENU TOGGLE ======
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // ====== HEADER SCROLL EFFECT ======
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // ====== SMOOTH SCROLL FOR ANCHOR LINKS ======
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = header.offsetHeight;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // ====== FORMSPREE FORM HANDLING ======
-        if (contactForm) {
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                // Disable submit button
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-                
-                // Clear previous status
-                formStatus.className = 'form-status';
-                formStatus.textContent = '';
-                formStatus.style.display = 'none';
-                
-                try {
-                    const formData = new FormData(contactForm);
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        // Success
-                        formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-                        formStatus.classList.add('success');
-                        formStatus.style.display = 'block';
-                        contactForm.reset();
-                        
-                        // Scroll to form status
-                        formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    } else {
-                        // Error from Formspree
-                        const errorData = await response.json();
-                        throw new Error(errorData.error || 'Failed to send message');
-                    }
-                } catch (error) {
-                    // Network or other errors
-                    console.error('Form submission error:', error);
-                    formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or email us directly.';
-                    formStatus.classList.add('error');
-                    formStatus.style.display = 'block';
-                    
-                    // Scroll to form status
-                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                } finally {
-                    // Re-enable submit button
-                    setTimeout(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
-                    }, 3000);
-                }
-            });
-        }
-
-        // ====== SCROLL ANIMATIONS ======
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-fade-in-up');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('animate-fade-in-up');
-                }
-            });
-        };
-
-        // Initial check
-        animateOnScroll();
         
-        // Check on scroll
-        window.addEventListener('scroll', animateOnScroll);
-
-        // ====== EMAIL CLICK FUNCTIONALITY ======
-        document.querySelectorAll('.fa-envelope').forEach(icon => {
-            icon.addEventListener('click', function() {
-                window.location.href = 'mailto:jagroup09@gmail.com';
-            });
-        });
-
-        // ====== FORM VALIDATION ======
-        const inputs = document.querySelectorAll('.form-control');
-        inputs.forEach(input => {
-            // Real-time validation
-            input.addEventListener('blur', function() {
-                if (this.value.trim() === '' && this.hasAttribute('required')) {
-                    this.style.borderColor = '#dc3545';
-                } else {
-                    this.style.borderColor = '';
-                }
-            });
+        <div class="about-content">
+            <div class="about-text">
+                <h2>J&A Logistics Company and Technologies</h2>
+                <p>We are a forward-thinking company dedicated to providing comprehensive business solutions. With expertise spanning logistics, technology, and digital marketing, we help businesses thrive in today's competitive landscape.</p>
+                <p>Our team of experienced professionals is committed to delivering exceptional service tailored to your specific needs.</p>
+                
+                <ul class="about-features">
+                    <li><i class="fas fa-check-circle"></i> Over a year of industry experience</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
+                    <li><i class="fas fa-check-circle"></i> Customized solutions for each client</li>
+                    <li><i class="fas fa-check-circle"></i> CRM Software System Setup</li>
+                </ul>
+                
+                <div class="about-actions">
+                    <a href="assets/pdf/company-profile.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-file-pdf"></i> Download Profile
+                    </a>
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
             
-            // Clear error on input
-            input.addEventListener('input', function() {
-                this.style.borderColor = '';
-            });
-        });
+            <div class="about-image"></div>
+        </div>
+    </div>
+</section>
 
-        // ====== PAGE LOAD ANIMATIONS ======
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add loaded class to body for any future animations
-            document.body.classList.add('loaded');
+<!-- ========================================
+CONTACT
+======================================== -->
+<section class="contact section-padding" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>We'd love to hear from you. Contact us using the information below or fill out the form.</p>
+                
+                <div class="contact-item">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <strong>Email</strong>
+                        <p>jagroup09@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <strong>Phone</strong>
+                        <p>+233 20 755 7204</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <strong>Location</strong>
+                        <p>Sogakop, Ghana</p>
+                    </div>
+                </div>
+            </div>
             
-            // Trigger initial scroll for header
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xjgkwwll" method="POST">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Service Interested In</label>
+                        <select name="service">
+                            <option value="">Select a service</option>
+                            <option value="CRM for Photographers">CRM for Photographers</option>
+                            <option value="CRM for Real Estate">CRM for Real Estate</option>
+                            <option value="CRM for Marketing Agencies">CRM for Marketing Agencies</option>
+                            <option value="Ads Management">Ads Management</option>
+                            <option value="IT Consultation">IT Consultation</option>
+                            <option value="Delivery">Delivery Services</option>
+                            <option value="Social Media">Social Media Management</option>
+                            <option value="Google Business">Google Business Profile</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+FOOTER
+======================================== -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>J&A Logistics & Technologies</h3>
+                <p>Comprehensive business solutions including CRM, logistics, technology, and digital marketing services.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="assets/pdf/company-profile.pdf" download>
+                    <i class="fas fa-file-pdf"></i> Company Profile
+                </a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <a href="#services">CRM Solutions</a>
+                <a href="#services">Ads Management</a>
+                <a href="#services">IT Consultation</a>
+                <a href="#services">Delivery Services</a>
+                <a href="#services">Social Media Management</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> jagroup09@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +233 20 755 7204</p>
+                <p><i class="fas fa-map-marker-alt"></i> Sogakope, Ghana</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 JA GROUP. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ========================================
+FLOATING WHATSAPP & TIKTOK BUTTONS
+======================================== -->
+<div class="floating-buttons">
+    <a href="https://wa.me/233207557204" class="float-btn whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://tiktok.com/@jagroup009" class="float-btn tiktok" target="_blank">
+        <i class="fab fa-tiktok"></i>
+    </a>
+</div>
+
+<!-- ========================================
+JAVASCRIPT
+======================================== -->
+<script>
+    // ====== MOBILE MENU ======
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // ====== HEADER SCROLL ======
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // ====== SMOOTH SCROLL ======
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = header.offsetHeight;
+                const top = target.offsetTop - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
+    });
+</script>
 
-        // ====== RESPONSIVE UTILITIES ======
-        window.addEventListener('resize', () => {
-            // Close mobile menu on resize if window is large
-            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            }
-        });
-    </script>
 </body>
-
 </html>
 
